@@ -68,8 +68,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/25.7.2.tar.gz",
-                    "sha256" : "4f4a4ed64590172ebb221c5940fb978b8a0642f509c6bd851464964879a2d515"
+                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/25.7.3.tar.gz",
+                    "sha256" : "6cb34ba0827a5e08c01f875181142a55fbe39212013fb3623ea0641a062a2e9c"
                 }
             ]
         }
