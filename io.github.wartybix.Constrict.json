@@ -1,7 +1,7 @@
 {
     "id" : "io.github.wartybix.Constrict",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "48",
+    "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
     "command" : "constrict",
     "finish-args" : [
@@ -10,15 +10,6 @@
         "--device=dri",
         "--socket=wayland"
     ],
-    "add-extensions" : {
-        "org.freedesktop.Platform.ffmpeg-full" : {
-            "version" : "24.08",
-            "directory" : "lib/ffmpeg",
-            "add-ld-path" : ".",
-            "no-autodownload" : false,
-            "autodelete" : false
-        }
-    },
     "cleanup-commands" : [
         "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
     ],
@@ -34,6 +25,25 @@
         "*.a"
     ],
     "modules" : [
+        {
+            "name": "blueprint-compiler",
+            "buildsystem": "meson",
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/blueprint-compiler.git",
+                    "tag": "v0.18.0",
+                    "commit": "07c9c9df9cd1b6b4454ecba21ee58211e9144a4b",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\d.]+)$"
+                    }
+                }
+            ]
+        },
         {
             "name" : "libva-utils",
             "builddir" : true,
@@ -69,7 +79,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/totem-video-thumbnailer.git",
-                    "commit" : "d295d9db51955f824bba83e15cabbdfa5c6d1bf7"
+                    "commit" : "6cb399918571a97591ff5a4a5a41d8e46b11027a"
                 }
             ]
         },
@@ -80,8 +90,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/25.8.1.tar.gz",
-                    "sha256" : "e8cb6688fa8d2f24b34bddb4a6252a958a8c4537f54d9bfadb7b3f04a6c2d8ac"
+                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/25.10.tar.gz",
+                    "sha256" : "87e2adb2cae49cd96453cef28a76dd19fda11b5f4bfc31d69a5b530786712028"
                 }
             ]
         }
