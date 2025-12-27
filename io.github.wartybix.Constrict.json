@@ -8,7 +8,8 @@
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
-        "--socket=wayland"
+        "--socket=wayland",
+        "--require-version=1.14.5"
     ],
     "cleanup-commands" : [
         "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
@@ -51,8 +52,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/intel/libva-utils/archive/refs/tags/2.22.0.tar.gz",
-                    "sha256" : "7b57615c130427ec134bb5d2b80af516ce5bb19a40e89b1dab46a0d59760d96c"
+                    "url" : "https://github.com/intel/libva-utils/archive/refs/tags/2.23.0.tar.gz",
+                    "sha256" : "fa7ff29847b55010fbbb775b35382f97f29b7b97abe9a2f6fb3e22b36db5440a"
                 }
             ]
         },
@@ -90,8 +91,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/25.12.tar.gz",
-                    "sha256" : "920173349ac2627f328fb5f79a8f9e90845b34ad432f193ea1c1ffff2d826a5e"
+                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/25.12.1.tar.gz",
+                    "sha256" : "6dc71ddeec1830882e99eabc1a42565330218706b586660cbaee5924cf969181"
                 }
             ]
         }
