@@ -11,9 +11,6 @@
         "--socket=wayland",
         "--require-version=1.14.5"
     ],
-    "cleanup-commands" : [
-        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
-    ],
     "cleanup" : [
         "/include",
         "/lib/pkgconfig",
