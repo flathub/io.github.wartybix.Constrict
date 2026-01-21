@@ -3,6 +3,9 @@
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
+    "sdk-extensions" : [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
     "command" : "constrict",
     "finish-args" : [
         "--share=ipc",
@@ -11,9 +14,9 @@
         "--socket=wayland",
         "--require-version=1.14.5"
     ],
-    "cleanup-commands" : [
-        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
-    ],
+    "build-options" : {
+        "append-path" : "/usr/lib/sdk/rust-stable/bin"
+    },
     "cleanup" : [
         "/include",
         "/lib/pkgconfig",
@@ -27,25 +30,6 @@
     ],
     "modules" : [
         {
-            "name": "blueprint-compiler",
-            "buildsystem": "meson",
-            "cleanup": [
-                "*"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/blueprint-compiler.git",
-                    "tag": "v0.18.0",
-                    "commit": "07c9c9df9cd1b6b4454ecba21ee58211e9144a4b",
-                    "x-checker-data": {
-                        "type": "git",
-                        "tag-pattern": "^v([\d.]+)$"
-                    }
-                }
-            ]
-        },
-        {
             "name" : "libva-utils",
             "builddir" : true,
             "buildsystem" : "meson",
@@ -58,29 +42,25 @@
             ]
         },
         {
-            "name" : "totem-pl-parser",
+            "name" : "gst-thumbnailers",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/GNOME/totem-pl-parser/-/archive/V_3_26_6/totem-pl-parser-V_3_26_6.tar.gz",
-                    "mirror-urls" : [
-                        "https://github.com/GNOME/totem-pl-parser/archive/refs/tags/V_3_26_6.tar.gz"
+                    "url" : "https://gitlab.gnome.org/GNOME/gst-thumbnailers/-/archive/1.0.alpha.3/gst-thumbnailers-1.0.alpha.3.tar.gz",
+                    "mirror-urls": [
+                        "https://github.com/GNOME/gst-thumbnailers/archive/refs/tags/1.0.alpha.3.tar.gz"
                     ],
-                    "sha256" : "7219272a4863f823e2dd6d997e78d725de9e6071b1af1b478870f207731a8234"
-                }
-            ]
-        },
-        {
-            "name" : "totem-video-thumbnailer",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+                    "sha256" : "2b510602bbee6b92473b084abecd84f1f5ca2ec0079c2dfaa3d08f08e42b8b37"
+                },
+                "generated-sources-gst-thumbnailers.json",
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/totem-video-thumbnailer.git",
-                    "commit" : "6cb399918571a97591ff5a4a5a41d8e46b11027a"
+                    "type": "shell",
+                    "commands" : [
+                        "mkdir .cargo",
+                        "cp cargo/config .cargo/"
+                    ]
                 }
             ]
         },
@@ -91,8 +71,11 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/25.12.1.tar.gz",
-                    "sha256" : "6dc71ddeec1830882e99eabc1a42565330218706b586660cbaee5924cf969181"
+                    "url" : "https://gitlab.gnome.org/World/Constrict/-/archive/26.1/Constrict-26.1.tar.gz",
+                    "mirror-urls": [
+                        "https://github.com/Wartybix/Constrict/archive/refs/tags/26.1.tar.gz"
+                    ],
+                    "sha256" : "4a7265b092ed914d9aae100a1d992370ed4f83724c56e0f609f101f32bf29d05"
                 }
             ]
         }
