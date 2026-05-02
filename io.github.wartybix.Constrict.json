@@ -1,7 +1,7 @@
 {
     "id" : "io.github.wartybix.Constrict",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "49",
+    "runtime-version" : "50",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -51,8 +51,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gst-thumbnailers/1.0/gst-thumbnailers-1.0.alpha.3.tar.xz",
-                    "sha256" : "e97fed4401021cdde0e6df7b27683b5d82530e6c7a394f1c8398113b188a491a"
+                    "url" : "https://download.gnome.org/sources/gst-thumbnailers/1.0/gst-thumbnailers-1.0.0.tar.xz",
+                    "sha256" : "f2a68019d319995d20a55cf0c32db1bb248834c2300ee757b417a5337d5d6497"
                 },
                 "generated-sources-gst-thumbnailers.json",
                 {
@@ -71,11 +71,11 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/26.2.tar.gz",
+                    "url" : "https://github.com/Wartybix/Constrict/archive/refs/tags/26.4.tar.gz",
                     "mirror-urls": [
-                        "https://gitlab.gnome.org/World/Constrict/-/archive/26.2/Constrict-26.2.tar.gz"
+                        "https://gitlab.gnome.org/World/Constrict/-/archive/26.4/Constrict-26.4.tar.gz"
                     ],
-                    "sha256" : "99760f068b1713547296a18dc9c5df4d0325ac219d5c1898f17cd17c69ebb36d"
+                    "sha256" : "a84bc809519bec7d6e302861c4e508fb97305cb44a96d8e924f0b4907a794d39"
                 }
             ]
         }
